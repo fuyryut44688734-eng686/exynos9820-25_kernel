@@ -1,4 +1,4 @@
-name: Build
+Name: Build
 
 on: [push]
 
@@ -17,14 +17,12 @@ jobs:
           token: ${{ secrets.TOKEN }}
         run: chmod +x build.sh && ./build.sh "${token}"
 
-
       - name: Upload Kernel Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Nethunter-Kernel-Note10
           path: |
-            out/arch/arm64/boot/Image*
-            arch/arm64/boot/Image*
-            *.zip
-            *.img
-
+            **/*.zip
+            **/*.img
+            **/Image*
+            **/zImage*
