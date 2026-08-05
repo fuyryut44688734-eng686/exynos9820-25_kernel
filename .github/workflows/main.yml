@@ -25,3 +25,4 @@ jobs:
             out/arch/arm64/boot/Image*
             arch/arm64/boot/Image*
             *.zip
+
