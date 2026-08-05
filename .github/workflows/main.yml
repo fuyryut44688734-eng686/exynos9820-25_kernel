@@ -17,12 +17,16 @@ jobs:
           token: ${{ secrets.TOKEN }}
         run: chmod +x build.sh && ./build.sh "${token}"
 
+      - name: Check generated files
+        run: |
+          echo "=== Searching for kernel output files ==="
+          find . -name "Image*" -o -name "*.zip" -o -name "*.img"
+
       - name: Upload Kernel Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Nethunter-Kernel-Note10
           path: |
-            out/arch/arm64/boot/Image*
-            arch/arm64/boot/Image*
-            *.zip
-
+            **/Image*
+            **/*.zip
+            **/*.img
