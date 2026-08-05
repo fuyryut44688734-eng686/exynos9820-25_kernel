@@ -22,8 +22,6 @@ jobs:
         with:
           name: Nethunter-Kernel-Note10
           path: |
-            **/*.zip
-            **/*.img
-            **/Image*
-            **/zImage*
-
+            out/arch/arm64/boot/Image*
+            arch/arm64/boot/Image*
+            *.zip
