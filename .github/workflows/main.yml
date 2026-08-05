@@ -27,3 +27,4 @@ jobs:
             arch/arm64/boot/Image*
             *.zip
             *.img
+
